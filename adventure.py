@@ -169,15 +169,22 @@ def merchant():
     if gold == 0:
        print("Im afraid you havent got the gold my friend, potter along and earn money you peasant")
 
-    if  answer.lower() == ("b"):
+   if answer.lower() == ("b"):
        print("You're really missing out my friend!")
        print("Goodbye! Have great time and enjoy your inevitable death which could have been prevented had you bought one of gerald's gracious goods potions")
        bossroom()
+
+
+
 
 def bossroom():
     global health
     global gold
     gold = gold - 10
+    giant_hp = 100
+    giant_damage = randint(10,30)
+    damage = randint(10,30)
+    hit_chance = randint(1,3)
     space()
     
      
@@ -192,7 +199,54 @@ def bossroom():
     print("Health regenerating... your health is now", health,)
 
     if answer.lower() == "b":
-    print("Storing Health potion...")
+       print("Storing Health potion...")
+ 
+
+    print(" ")
+    print(" ")
+    print("In the distance you hear a groan..")
+    print("You head towards the peculiar noise to investigate")
+    print("In the distance you see a Giant and decide to attack it")
+
+
+    print("The Giant see's you and suddenly attacks")
+
+    while giant_hp > 0 and health is 0:
+       
+     if giant_damage == 0:
+       print("You evaded his attack")
+     else:
+       print("You got hit")
+       health = health - giant_damage
+
+
+     if 10<= damage <=15:
+       print("You slice your sword into the skeletons chest, but dont kill it")
+       print("it goes for another attack")
+       print("your health is", health)
+       giant_hp = giant_hp - damage
+
+            
+     if 15< damage <=20:
+       print("You stab your sword into the skeletons chest, but dont kill it")
+       print("it goes for another attack")
+       print("your health is", health)
+       giant_hp = giant_hp - damage
+
+     if 20< damage <= 30:
+       print("You landed a critical hit on the giant")
+
+     else:
+       print("You have slaughtered the skeleton and head towards the exit")
+       print("your health is", health)
+       print("exiting")
+       quit()
+            
+
+     if health <= 0:
+       print("You died, try again")
+
+    
     
 
    
